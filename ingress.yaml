@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-app-ingress           # Name of the Ingress
+spec:
+  rules:
+  - host: myapp.example.com      # Domain for accessing the Service
+    http:
+      paths:
+      - path: /                  # Path to access the Service
+        pathType: Prefix
+        backend:
+          service:
+            name: my-app-service # Service name for routing
+            port:
+              number: 80         # Port exposed by the Service

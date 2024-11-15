@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment       # Name of the Deployment
+spec:
+  replicas: 2                   # Number of Pod replicas to run
+  selector:
+    matchLabels:
+      app: my-app               # Label to match for Pods
+  template:                      # Template for creating Pods
+    metadata:
+      labels:
+        app: my-app             # Label applied to the Pods
+    spec:
+      containers:
+      - name: my-app-container   # Name of the container
+        image: nginx:latest      # Docker image to use
+        ports:
+        - containerPort: 80      # Port exposed by the container
