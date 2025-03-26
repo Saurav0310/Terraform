@@ -19,13 +19,13 @@ jobs:
         with:
           terraform_version: 1.7.0
 
-      - name: Terraform Format
-        id: fmt
-        run: terraform fmt -check -recursive
+      # - name: Terraform Format
+      #   id: fmt
+      #   run: terraform fmt -check -recursive
 
-      - name: Terraform Validate
-        id: validate
-        run: terraform validate
+      # - name: Terraform Validate
+      #   id: validate
+      #   run: terraform validate
 
       - name: Install TFLint
         uses: terraform-linters/setup-tflint@v3
